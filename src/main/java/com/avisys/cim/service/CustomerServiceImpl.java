@@ -23,10 +23,17 @@ public class CustomerServiceImpl implements CustomerService {
 		
 		
 		
-	   
+	}
+
+	
+	@Override
+	public String customerDeleteByMobileNumber(String MobileNumber) {
 		
+		Long CustomerId = customerDao.findByMobileNumber(MobileNumber).getId();
 		
+		customerDao.deleteById(CustomerId);
 		
+		return "Customer With Id :"+CustomerId+" Deleted Sucessfully";
 	}
 
 }

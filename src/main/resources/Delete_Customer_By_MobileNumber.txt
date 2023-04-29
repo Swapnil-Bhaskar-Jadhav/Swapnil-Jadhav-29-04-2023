@@ -1,0 +1,12 @@
+Delete url : http://localhost:8080/CustomerInfoManagementApplication/customer/delete/9111111113
+
+Response On Success : {
+ 						   "message": "Customer With Id :3 Deleted Sucessfully"
+					 }
+
+Response On Failure : {
+		    "message": "Mobile Number Doesnot exist",
+		    "errorDetails": "Cannot invoke \"com.avisys.cim.Customer.getId()\" because the return value of \"com.avisys.cim.dao.CustomerDao.findByMobileNumber(String)\" is null",
+		    "timeStamp": "2023-04-30T02:04:37.6362243"
+		}
+					 

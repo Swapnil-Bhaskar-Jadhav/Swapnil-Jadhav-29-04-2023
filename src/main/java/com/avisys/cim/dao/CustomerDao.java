@@ -6,5 +6,5 @@ import com.avisys.cim.Customer;
 
 public interface CustomerDao extends JpaRepository<Customer,Long>{
 
-	
+	Customer findByMobileNumber(String MobileNumber);
 }
