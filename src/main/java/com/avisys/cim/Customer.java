@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 public class Customer {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 
 	@Column(name = "FIRST_NAME", nullable = false)
@@ -23,6 +23,22 @@ public class Customer {
 
 	@Column(name = "MOBILE_NUMBER", unique = true, nullable = false)
 	private String mobileNumber;
+	
+	
+	public Customer() {
+		
+	}
+	
+	
+
+	public Customer(String firstName, String lastName, String mobileNumber) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.mobileNumber = mobileNumber;
+	}
+
+
 
 	public Long getId() {
 		return id;

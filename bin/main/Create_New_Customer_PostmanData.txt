@@ -1,0 +1,23 @@
+http://localhost:8080/CustomerInfoManagementApplication/customer/add
+
+Request Body : {
+
+    "firstName":"Swapnil",
+    "lastName":"Jadhav",
+    "mobileNumber":"9111111114"
+
+}
+       
+       
+Sample Response :  {
+                       "id": 7,
+                        "firstName": "Swapnil",
+    					"lastName": "Jadhav",
+    				    "mobileNumber": "8550965895"
+                   }       
+                   
+Error Responce : {
+                  "message": "Customer Insertion Failed",
+                  "errorDetails": "could not execute statement; SQL [n/a]; constraint [\"PUBLIC.CUSTOMER_UK1_INDEX_5 ON PUBLIC.CUSTOMER(MOBILE_NUMBER NULLS FIRST) VALUES ( /* 4 */ '9111111114' )\"; SQL statement:\ninsert into customer (id, first_name, last_name, mobile_number) values (default, ?, ?, ?) [23505-214]]",
+                  "timeStamp": "2023-04-30T00:47:07.6799852"
+                  }                   
