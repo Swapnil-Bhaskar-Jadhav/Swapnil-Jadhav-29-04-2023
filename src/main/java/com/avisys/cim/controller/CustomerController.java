@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +31,7 @@ public class CustomerController {
 		System.out.println("Inside ctor of" + getClass().getName());
 	}
 
+	// Functionality To Create New User So Additng Transient Entity
 	@PostMapping("/add")
 	public ResponseEntity<?> addCustomer(@RequestBody Customer customer) {
 		// This Statement for just dubugging purpose
@@ -122,6 +124,22 @@ public class CustomerController {
 		}
 
 	}
+	
+	
+	
+	// Provide Functionality Of Update User Mobile Number
+	@PatchMapping("/update/{id}")
+	public ResponseEntity<?> UpdateMobileNumberOfExistingCustomer(@PathVariable Long id,@RequestParam String mobileNumber){
+	          //Invoking Service Method To Find Customer Whose Mobile Number Is To Be Updated
+			 Customer c  = customerService.findCustomer(id,mobileNumber);
+			 if(c!=null)
+			    return new ResponseEntity<>(c,HttpStatus.OK );
+			 else 
+			    return new ResponseEntity<>(new ErrorResponse("Customer not found",""),HttpStatus.INTERNAL_SERVER_ERROR);
+		
+	}
+	
+	
 	
 	
 

@@ -26,4 +26,6 @@ public interface CustomerService {
 	List<Customer> findByLastNameAndMobileNumber(String lastName, String mobileNumber);
 
 	List<Customer> findAllCustomer();
+
+	Customer findCustomer(Long id, String mobileNumber);
 }

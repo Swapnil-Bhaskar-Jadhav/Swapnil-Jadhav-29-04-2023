@@ -1,0 +1,11 @@
+
+// Update MobileNumber Functionality
+
+url = http://localhost:8080/CustomerInfoManagementApplication/customer/update/1?mobileNumber=9821324323
+
+Response = {
+			    "id": 1,
+			    "firstName": "Alan",
+			    "lastName": "Smith",
+			    "mobileNumber": "9821324323"
+			}

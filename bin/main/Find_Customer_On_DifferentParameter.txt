@@ -1,6 +1,14 @@
-http://localhost:8080/CustomerInfoManagementApplication/customer/find?firstName=kat
 
-[
+   * Any third-party application should be able to get Customer related information in JSON format.
+   * The third-party should be able to request either all customer or filter information using any or all of the parameters like first name,
+     last name and mobile number.
+   * First name and Last name should be able to return result which partially match.
+        
+
+
+url = http://localhost:8080/CustomerInfoManagementApplication/customer/find?firstName=kat
+
+Response = [
     {
         "id": 4,
         "firstName": "Kathy",
@@ -10,9 +18,9 @@ http://localhost:8080/CustomerInfoManagementApplication/customer/find?firstName=
 ]
 
 
-http://localhost:8080/CustomerInfoManagementApplication/customer/find?lastName=sm
+url = http://localhost:8080/CustomerInfoManagementApplication/customer/find?lastName=sm
 
-[
+Response =[
     {
         "id": 1,
         "firstName": "Alan",
@@ -27,14 +35,62 @@ http://localhost:8080/CustomerInfoManagementApplication/customer/find?lastName=s
     }
 ]
 
-http://localhost:8080/CustomerInfoManagementApplication/customer/find?mobileNumber=9111111112
+url = http://localhost:8080/CustomerInfoManagementApplication/customer/find?mobileNumber=9111111112
 
-{
+Response = {
     "id": 2,
     "firstName": "Joe",
     "lastName": "Turing",
     "mobileNumber": "9111111112"
 }
 
+url = http://localhost:8080/CustomerInfoManagementApplication/customer/find?firstName=al&lastName=sm&mobileNumber=9111111111
 
+Response = [
+    {
+        "id": 1,
+        "firstName": "Alan",
+        "lastName": "Smith",
+        "mobileNumber": "9111111111"
+    }
+]
 
+url = http://localhost:8080/CustomerInfoManagementApplication/customer/find?firstName=al&mobileNumber=9111111111
+
+Response =[
+    {
+        "id": 1,
+        "firstName": "Alan",
+        "lastName": "Smith",
+        "mobileNumber": "9111111111"
+    }
+]
+
+url = http://localhost:8080/CustomerInfoManagementApplication/customer/find
+
+Response = [
+    {
+        "id": 1,
+        "firstName": "Alan",
+        "lastName": "Smith",
+        "mobileNumber": "9111111111"
+    },
+    {
+        "id": 2,
+        "firstName": "Joe",
+        "lastName": "Turing",
+        "mobileNumber": "9111111112"
+    },
+    {
+        "id": 3,
+        "firstName": "John",
+        "lastName": "Smith",
+        "mobileNumber": "9111111113"
+    },
+    {
+        "id": 4,
+        "firstName": "Kathy",
+        "lastName": "Sierra",
+        "mobileNumber": "9111111114"
+    }
+]

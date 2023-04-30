@@ -87,4 +87,15 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerDao.findAll();
 	}
 
+	@Override
+	public Customer findCustomer(Long id, String mobileNumber) {
+		Customer c = customerDao.findById(id).get();
+		c.setMobileNumber(mobileNumber);
+		customerDao.save(c);
+		return c;
+	}
+	
+	
+	
+
 }
